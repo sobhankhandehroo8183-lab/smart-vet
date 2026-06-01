@@ -1,0 +1,250 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "test@test.com",
+      "password": "123456",
+      "name": "کاربر تست",
+      "phone": "09123456789",
+      "address": "تهران، خیابان آزادی",
+      "walletBalance": 150000,
+      "subscription": "free",
+      "subscriptionExpiry": null,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "avatar": null
+    },
+    {
+      "id": "2",
+      "email": "sara@gmail.com",
+      "password": "123456",
+      "name": "سارا محمدی",
+      "phone": "09121234567",
+      "address": "اصفهان، خیابان نقش جهان",
+      "walletBalance": 50000,
+      "subscription": "vip",
+      "subscriptionExpiry": "2025-01-01T00:00:00.000Z",
+      "createdAt": "2024-02-01T00:00:00.000Z",
+      "avatar": null
+    }
+  ],
+  "animals": [
+    {
+      "id": "1",
+      "userId": "1",
+      "name": "کیکا",
+      "type": "dog",
+      "breed": "پامرانین",
+      "age": 3,
+      "weight": 2.5,
+      "gender": "female",
+      "status": "healthy",
+      "color": "قهوه‌ای و سفید",
+      "microchip": "123456789012345",
+      "lastCheckup": "1402/10/15",
+      "nextCheckup": "1402/11/15",
+      "image": null,
+      "medicalHistory": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "name": "میسی",
+      "type": "cat",
+      "breed": "پرشین",
+      "age": 2,
+      "weight": 3.8,
+      "gender": "male",
+      "status": "sick",
+      "color": "سفید",
+      "microchip": "987654321098765",
+      "lastCheckup": "1402/10/20",
+      "nextCheckup": "1402/11/10",
+      "image": null,
+      "medicalHistory": [],
+      "createdAt": "2024-01-05T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "name": "هپی",
+      "type": "rabbit",
+      "breed": "هلندی",
+      "age": 1,
+      "weight": 1.2,
+      "gender": "female",
+      "status": "healthy",
+      "color": "سفید و سیاه",
+      "microchip": null,
+      "lastCheckup": "1402/10/10",
+      "nextCheckup": null,
+      "image": null,
+      "medicalHistory": [],
+      "createdAt": "2024-01-10T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "2",
+      "name": "جیجی",
+      "type": "bird",
+      "breed": "مرغ عشق",
+      "age": 2,
+      "weight": 0.05,
+      "gender": "male",
+      "status": "recovering",
+      "color": "آبی و سبز",
+      "microchip": null,
+      "lastCheckup": "1402/10/25",
+      "nextCheckup": null,
+      "image": null,
+      "medicalHistory": [],
+      "createdAt": "2024-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "userId": "2",
+      "name": "رکس",
+      "type": "dog",
+      "breed": "ژرمن شپرد",
+      "age": 4,
+      "weight": 35,
+      "gender": "male",
+      "status": "critical",
+      "color": "مشکی و قهوه‌ای",
+      "microchip": "555555555555555",
+      "lastCheckup": "1402/10/22",
+      "nextCheckup": "1402/10/29",
+      "image": null,
+      "medicalHistory": [],
+      "createdAt": "2024-01-20T00:00:00.000Z"
+    }
+  ],
+  "diagnoses": [
+    {
+      "id": "1",
+      "userId": "1",
+      "animalId": "1",
+      "symptoms": ["سرفه", "عطسه", "تب", "بی‌حالی"],
+      "images": [],
+      "result": "عفونت تنفسی فوقانی (URI)",
+      "confidence": 94,
+      "description": "یک عفونت ویروسی یا باکتریایی که سیستم تنفسی فوقانی را درگیر می‌کند",
+      "urgency": "medium",
+      "medications": [
+        {
+          "name": "آموکسی‌سیلین",
+          "type": "قرص",
+          "dosage": "۲۰ میلی‌گرم به ازای هر کیلوگرم وزن",
+          "frequency": "هر ۱۲ ساعت",
+          "duration": "۷ روز",
+          "price": 45000,
+          "pharmacyLink": "https://daroo.ir/amoxicillin"
+        },
+        {
+          "name": "شربت استامینوفن",
+          "type": "شربت",
+          "dosage": "۱۰ میلی‌گرم به ازای هر کیلوگرم وزن",
+          "frequency": "هر ۸ ساعت",
+          "duration": "۳ روز",
+          "price": 28000,
+          "pharmacyLink": "https://daroo.ir/acetaminophen"
+        }
+      ],
+      "homeCare": [
+        "استراحت کامل در محیط گرم",
+        "دسترسی همیشگی به آب تازه",
+        "غذای نرم و هضم‌پذیر (مرغ پخته + برنج)"
+      ],
+      "whenToSeeVet": "اگر بعد از ۳ روز بهبودی ندید یا علائم بدتر شد",
+      "isPaid": true,
+      "paidAt": "2024-01-20T10:30:00.000Z",
+      "price": 49000,
+      "createdAt": "2024-01-20T10:30:00.000Z"
+    }
+  ],
+  "medications": [
+    {
+      "id": "1",
+      "name": "آموکسی‌سیلین",
+      "type": "آنتی‌بیوتیک",
+      "form": "قرص",
+      "diseases": ["عفونت تنفسی", "عفونت ادراری", "عفونت پوستی"],
+      "dosage": "۲۰mg/kg هر ۱۲ ساعت",
+      "duration": "۷ روز",
+      "price": 45000,
+      "pharmacyLink": "https://daroo.ir/amoxicillin",
+      "requiresPrescription": true
+    },
+    {
+      "id": "2",
+      "name": "ژل موضعی تتراسایکلین",
+      "type": "آنتی‌بیوتیک موضعی",
+      "form": "پماد",
+      "diseases": ["عفونت چشمی", "زخم پوستی"],
+      "dosage": "روزانه ۳ بار روی محل زده شود",
+      "duration": "۵ روز",
+      "price": 28000,
+      "pharmacyLink": "https://daroo.ir/tetracycline",
+      "requiresPrescription": false
+    },
+    {
+      "id": "3",
+      "name": "شربت استامینوفن",
+      "type": "ضد درد و تب",
+      "form": "شربت",
+      "diseases": ["تب", "درد"],
+      "dosage": "۱۰mg/kg هر ۸ ساعت",
+      "duration": "۳ روز",
+      "price": 28000,
+      "pharmacyLink": "https://daroo.ir/acetaminophen",
+      "requiresPrescription": false
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "userId": "1",
+      "amount": 49000,
+      "type": "purchase",
+      "itemId": "1",
+      "itemType": "diagnosis",
+      "status": "success",
+      "paymentMethod": "wallet",
+      "createdAt": "2024-01-20T10:30:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "amount": 100000,
+      "type": "charge",
+      "status": "success",
+      "paymentMethod": "card",
+      "createdAt": "2024-01-15T14:20:00.000Z"
+    }
+  ],
+  "subscriptionPlans": [
+    {
+      "id": "free",
+      "name": "رایگان",
+      "price": 0,
+      "features": [
+        "حداکثر ۲ حیوان",
+        "تشخیص سطحی",
+        "پشتیبانی ایمیل"
+      ]
+    },
+    {
+      "id": "vip",
+      "name": "VIP",
+      "price": 99000,
+      "priceYearly": 990000,
+      "features": [
+        "حیوانات نامحدود",
+        "تشخیص نامحدود و کامل",
+        "چت با هوش مصنوعی",
+        "تخفیف ۲۰٪ داروها",
+        "پشتیبانی ۲۴/۷"
+      ]
+    }
+  ]
+}
