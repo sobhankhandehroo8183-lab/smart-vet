@@ -1,13 +1,21 @@
-// تغییر API_URL برای دمو آنلاین
-// برای اجرا روی Vercel، باید از JSON Server استفاده نکنی
-// می‌توانی از Mock Data استفاده کنی
+// تشخیص محیط (محلی یا آنلاین)
+const isLocalhost = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+// تعیین API_URL
+export const API_URL = isLocalhost 
+  ? 'http://localhost:5000' 
+  : '';
 
-// اگر در محیط development هستیم از localhost استفاده کن
+// بررسی در دسترس بودن API
+export const isApiAvailable = () => {
+  return isLocalhost;
+};
+
+// تابع برای گرفتن آدرس پایه
 export const getBaseUrl = () => {
-  if (import.meta.env.DEV) {
+  if (isLocalhost) {
     return 'http://localhost:5000';
   }
-  return ''; // در حالت production، از داده‌های mock استفاده کن
+  return '';
 };

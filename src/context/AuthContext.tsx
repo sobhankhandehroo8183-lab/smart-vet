@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { login, register, logout, getCurrentUser, updateProfile } from '../api/authApi';
 import { getUserAnimals } from '../api/animalsApi';
 import { getWalletBalance } from '../api/paymentApi';
+import { isApiAvailable } from '../api/apiService';
 
 interface User {
   id: string;
@@ -54,6 +56,32 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
+// داده‌های Mock برای حیوانات (در دمو آنلاین)
+const mockAnimals: Animal[] = [
+  {
+    id: '1',
+    name: 'کیکا',
+    type: 'dog',
+    breed: 'پامرانین',
+    age: 3,
+    weight: 2.5,
+    gender: 'female',
+    status: 'healthy',
+    image: undefined
+  },
+  {
+    id: '2',
+    name: 'میسی',
+    type: 'cat',
+    breed: 'پرشین',
+    age: 2,
+    weight: 3.8,
+    gender: 'male',
+    status: 'sick',
+    image: undefined
+  }
+];
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [animals, setAnimals] = useState<Animal[]>([]);
@@ -75,6 +103,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   // بارگذاری حیوانات کاربر
   const loadUserAnimals = async (userId: string) => {
+    // اگر در دمو آنلاین هستیم، از داده‌های Mock استفاده کن
+    if (!isApiAvailable()) {
+      setAnimals(mockAnimals);
+      return;
+    }
+    
     const result = await getUserAnimals(userId);
     if (result.success) {
       setAnimals(result.animals);
@@ -83,6 +117,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   // بارگذاری موجودی کیف پول
   const loadUserBalance = async (userId: string) => {
+    if (!isApiAvailable()) {
+      // در دمو آنلاین موجودی را از localStorage می‌خوانیم
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        const currentUser = JSON.parse(storedUser);
+        if (user) {
+          setUser({ ...user, walletBalance: currentUser.walletBalance || 100000 });
+        }
+      }
+      return;
+    }
+    
     const result = await getWalletBalance(userId);
     if (result.success && user) {
       setUser({ ...user, walletBalance: result.balance });

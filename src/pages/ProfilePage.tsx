@@ -5,7 +5,7 @@ import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaEdit, FaSave, FaTimes, F
 import { Link } from 'react-router-dom';
 
 const ProfilePage: React.FC = () => {
-  const { user, updateUserProfile } = useAuth();
+  const { user, updateUserProfile, animals } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -221,7 +221,7 @@ const ProfilePage: React.FC = () => {
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-gray-600">تعداد حیوانات</span>
-                <span className="font-bold text-gray-800">{user.animals?.length || 0}</span>
+                <span className="font-bold text-gray-800">{animals?.length || 0}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">تشخیص‌های انجام شده</span>
