@@ -2,6 +2,7 @@
   "name": "smart-vet",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://sobhankhandehroo8183-lab.github.io/smart-vet",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +10,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "backend": "json-server src/backend/db.json --port 5000 --watch",
-    "dev:all": "concurrently \"npm run backend\" \"npm run dev\""
+    "dev:all": "concurrently \"npm run backend\" \"npm run dev\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -38,6 +41,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.3.0",
     "json-server": "^0.17.4",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
