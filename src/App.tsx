@@ -15,7 +15,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename="/smart-vet">
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
