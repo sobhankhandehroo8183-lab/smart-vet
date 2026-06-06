@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import Layout from './layouts/Layout';
@@ -15,7 +15,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -28,7 +28,7 @@ function App() {
               <Route path="/diagnosis-history" element={<DiagnosisHistoryPage />} />
             </Routes>
           </Layout>
-        </Router>
+        </BrowserRouter>
       </CartProvider>
     </AuthProvider>
   );
