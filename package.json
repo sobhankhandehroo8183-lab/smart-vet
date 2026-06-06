@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:gh": "cp vite.config.gh.ts vite.config.ts && tsc && vite build",
+    "build:gh": "copy vite.config.gh.ts vite.config.ts /Y && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "backend": "json-server src/backend/db.json --port 5000 --watch",
